@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  <!-- <script src="Data.js" type="text/javascript" charset="utf-8"></script> -->
+  <script src="Einkaufsliste.js" type="text/javascript" charset="utf-8"></script>
+  <title>My List</title>
+</head>
+
+<body>
+  <header>
+    <div id="title">My List </div>
+  </header>
+
+  <div id="display">
+  </div>
+
+  <fieldset class="addition">
+    <legend>New Entry</legend>
+    <form action="" method="get">
+      <label for="nameIn">name the new item</label>
+      <input type="text" name="name" id="nameIn"> <br>
+      <label for="amountIn">how many do you want?</label>
+      <input type="number" name="amount" id="amountIm"> <br>
+      <label for="commentIn">add the unit or a comment</label>
+      <input type="text" name="comment" id="commentIn"> <br>
+      <label for="dateIn">acquired last on</label>
+      <input type="date" name="date" id="dateIn"> <br>
+
+      <input type="submit" value="Add Entry">
+    </form>
+  </fieldset>
+
+  <!-- <button class="addition" id="add">Add Entry</button> -->
+
+</body>
+
+</html>
