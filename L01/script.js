@@ -7,15 +7,15 @@ var L01;
     function getVerse(_subjects, _predicates, _objects) {
         let vers = "";
         let randomNumber = 0;
-        randomNumber = Math.floor(Math.random()) * _subjects.length - 1;
-        vers += _subjects.splice(randomNumber)[0] + " ";
-        randomNumber = Math.floor(Math.random()) * _predicates.length - 1;
-        vers += _predicates.splice(randomNumber)[0] + " ";
-        randomNumber = Math.floor(Math.random()) * _objects.length - 1;
-        vers += _objects.splice(randomNumber)[0] + ".";
+        randomNumber = Math.floor(Math.random() * _subjects.length - 1);
+        vers += _subjects.splice(randomNumber, 1)[0] + " ";
+        randomNumber = Math.floor(Math.random() * _predicates.length - 1);
+        vers += _predicates.splice(randomNumber, 1)[0] + " ";
+        randomNumber = Math.floor(Math.random() * _objects.length - 1);
+        vers += _objects.splice(randomNumber, 1)[0] + ".";
         return vers;
     }
-    for (let i = 6; i > 1; i--) {
+    for (let i = 6; i > 0; i--) {
         console.log(getVerse(subjects, predicates, objects));
     }
 })(L01 || (L01 = {}));
