@@ -4,6 +4,8 @@ var L04_Einkaufsliste;
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         loadContent(L04_Einkaufsliste.items);
+        let submit = document.querySelector("input[type='submit']");
+        submit.addEventListener("click", addItem);
     }
     function loadContent(_items) {
         _items.forEach(item => {
@@ -25,6 +27,20 @@ var L04_Einkaufsliste;
         innerDiv.appendChild(createSpan(_item.date, "date"));
         div.appendChild(innerDiv);
         display.appendChild(div);
+    }
+    function addItem(_event) {
+        let formData = new FormData(document.forms[0]);
+        console.log(formData.get("Name"));
+        console.log(formData.get("Date"));
+        let newItem = {
+            name: formData.get("Name").toString(),
+            amount: Number(formData.get("Amount")),
+            comment: formData.get("Comment").toString(),
+            date: formData.get("Date").toString()
+        };
+        console.log(newItem);
+        document.forms[0].reset();
+        displayItem(newItem);
     }
     function createSpan(_content, _className) {
         let span = document.createElement("span");

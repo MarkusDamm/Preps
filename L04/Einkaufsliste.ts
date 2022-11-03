@@ -4,7 +4,9 @@ namespace L04_Einkaufsliste {
 
   function handleLoad(_event: Event): void {
     loadContent(items);
+    let submit: HTMLInputElement = <HTMLInputElement>document.querySelector("input[type='submit']");
 
+    submit.addEventListener("click", addItem);
   }
 
   function loadContent(_items: Item[]): void {
@@ -31,6 +33,23 @@ namespace L04_Einkaufsliste {
 
     div.appendChild(innerDiv);
     display.appendChild(div);
+  }
+
+  function addItem(_event: Event): void {
+    let formData: FormData = new FormData(document.forms[0]);
+
+    console.log(formData.get("Name"));
+    console.log(formData.get("Date"));
+
+    let newItem: Item = {
+      name: formData.get("Name").toString(),
+      amount: Number(formData.get("Amount")),
+      comment: formData.get("Comment").toString(),
+      date: formData.get("Date").toString()
+    };
+    console.log(newItem);
+    document.forms[0].reset();
+    displayItem(newItem);
   }
 
   function createSpan(_content: string | number, _className: string): HTMLSpanElement {
