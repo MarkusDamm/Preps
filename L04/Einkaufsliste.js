@@ -5,7 +5,7 @@ var L04_Einkaufsliste;
     function handleLoad(_event) {
         loadContent(L04_Einkaufsliste.items);
         let submit = document.querySelector("input[type='submit']");
-        submit.addEventListener("click", addItem);
+        submit.addEventListener("click", createNewItem);
     }
     function loadContent(_items) {
         _items.forEach(item => {
@@ -28,7 +28,7 @@ var L04_Einkaufsliste;
         div.appendChild(innerDiv);
         display.appendChild(div);
     }
-    function addItem(_event) {
+    function createNewItem(_event) {
         let formData = new FormData(document.forms[0]);
         console.log(formData.get("Name"));
         console.log(formData.get("Date"));

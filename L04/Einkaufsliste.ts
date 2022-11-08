@@ -6,7 +6,7 @@ namespace L04_Einkaufsliste {
     loadContent(items);
     let submit: HTMLInputElement = <HTMLInputElement>document.querySelector("input[type='submit']");
 
-    submit.addEventListener("click", addItem);
+    submit.addEventListener("click", createNewItem);
   }
 
   function loadContent(_items: Item[]): void {
@@ -35,7 +35,7 @@ namespace L04_Einkaufsliste {
     display.appendChild(div);
   }
 
-  function addItem(_event: Event): void {
+  function createNewItem(_event: Event): void {
     let formData: FormData = new FormData(document.forms[0]);
 
     console.log(formData.get("Name"));
@@ -47,6 +47,7 @@ namespace L04_Einkaufsliste {
       comment: formData.get("Comment").toString(),
       date: formData.get("Date").toString()
     };
+
     console.log(newItem);
     document.forms[0].reset();
     displayItem(newItem);
