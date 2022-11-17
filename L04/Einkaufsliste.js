@@ -30,15 +30,15 @@ var L04_Einkaufsliste;
     }
     function createNewItem(_event) {
         let formData = new FormData(document.forms[0]);
-        console.log(formData.get("Name"));
-        console.log(formData.get("Date"));
+        let nameData = formData.get("Name");
+        let commentData = formData.get("Name");
+        let dateData = formData.get("Name");
         let newItem = {
-            name: formData.get("Name").toString(),
+            name: nameData.toString(),
             amount: Number(formData.get("Amount")),
-            comment: formData.get("Comment").toString(),
-            date: formData.get("Date").toString()
+            comment: commentData.toString(),
+            date: dateData.toString()
         };
-        console.log(newItem);
         document.forms[0].reset();
         displayItem(newItem);
     }
