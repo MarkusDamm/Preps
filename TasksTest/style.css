@@ -1,0 +1,34 @@
+.item1 {
+  grid-area: task;
+}
+
+.item2 {
+  grid-area: comment;
+}
+
+.item3 {
+  grid-area: date;
+}
+
+.item4 {
+  grid-area: person;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'task comment comment date person';
+  gap: 10px;
+  row-gap: 20px;
+  grid-row-end: 5;
+  background-color: #2196F3;
+  padding: 10px;
+  width: 600px;
+}
+
+.grid-container>div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
